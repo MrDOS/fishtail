@@ -1,0 +1,42 @@
+[
+    {
+        "latitude": 45.088032,
+        "longitude": -64.367202,
+        "startDate": 1394704800,
+        "endDate": 1394709608,
+        "anglers": 12,
+        "exactAnglers": true,
+        "lines": 1,
+        "catches": 1,
+        "exactCatches": true,
+        "fish": [
+            {
+                "species": "atlantic sturgeon",
+                "tagId": "TAG12345",
+                "tagColor": "blue",
+                "length": 13480,
+                "exactLength": false,
+                "catchCondition": "dead"
+            }
+        ]
+    },
+    {
+        "locationName": "The Guzzle",
+        "startDate": 1394834460,
+        "endDate": 1394834580,
+        "anglers": 1,
+        "exactAnglers": false,
+        "lines": 1,
+        "catches": 1,
+        "exactCatches": false,
+        "fish": [
+            {
+                "species": "striped bass",
+                "tookSample": true,
+                "length": 7538,
+                "exactLength": true,
+                "condition": "vigorous"
+            }
+        ]
+    }
+]
