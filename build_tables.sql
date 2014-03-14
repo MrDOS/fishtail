@@ -39,3 +39,7 @@ CREATE TABLE fish (
     tag_color       colour,
     took_sample     BOOLEAN NOT NULL,
     photo           VARBIT);
+
+CREATE TABLE auth (
+    secret          CHAR(40) NOT NULL PRIMARY KEY,
+    description     TEXT);
