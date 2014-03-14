@@ -12,7 +12,7 @@ CREATE TYPE colour AS ENUM ('blue', 'pink', 'red', 'yellow');
 
 CREATE TABLE session (
     session_id      BIGSERIAL PRIMARY KEY,
-    username        VARCHAR(50),    /* What's my name again? */
+    username        VARCHAR(50) NOT NULL,   /* What's my name again? */
     start_time      TIMESTAMP NOT NULL,
     end_time        TIMESTAMP NOT NULL,
     /* can convert to timestamp:
@@ -28,6 +28,7 @@ CREATE TABLE session (
 
 CREATE TABLE fish (
     fish_id         BIGSERIAL PRIMARY KEY,
+    session_id      BIGINT REFERENCES session(session_id) NOT NULL,
     species         species NOT NULL,
     length          INTEGER NOT NULL,
     exact_length    BOOLEAN NOT NULL,
