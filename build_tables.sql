@@ -34,7 +34,7 @@ CREATE TABLE fish (
     catch_health    health NOT NULL,
     release_health  health NOT NULL,
     tagged          BOOLEAN NOT NULL,
-    tagId           VARCHAR(50),    /* We're all going to die! */
-    tagColor        colour,
-    tookSample      BOOLEAN NOT NULL,
+    tag_id          VARCHAR(50),    /* We're all going to die! */
+    tag_color       colour,
+    took_sample     BOOLEAN NOT NULL,
     photo           VARBIT);
