@@ -9,6 +9,10 @@
 class FishingSession
 {
     /**
+     * @var string the TrackMyFish username to be associated with the session
+     */
+    public $username;
+    /**
      * @var double general latitude of session
      */
     public $latitude;
@@ -56,6 +60,8 @@ class FishingSession
 
     public function __construct($object)
     {
+        if (!isset($object->username))
+            throw new \Exception('A username must be specified');
         if (!isset($object->startDate))
             throw new \Exception('A start date must be specified');
         if (!isset($object->endDate))
@@ -77,6 +83,7 @@ class FishingSession
             && !isset($object->locationName))
             throw new \Exception('A location must be specified');
 
+        $this->username = $object->username;
         $this->latitude = (isset($object->latitude)) ? $object->latitude : null;
         $this->longitude = (isset($object->longitude)) ? $object->longitude : null;
         $this->locationName = (isset($object->locationName)) ? $object->locationName : null;

@@ -1,5 +1,6 @@
 [
     {
+        "username": "player1",
         "latitude": 45.088032,
         "longitude": -64.367202,
         "startDate": 1394704800,
@@ -21,6 +22,7 @@
         ]
     },
     {
+        "username": "aaa",
         "locationName": "The Guzzle",
         "startDate": 1394834460,
         "endDate": 1394834580,

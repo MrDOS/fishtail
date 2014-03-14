@@ -20,6 +20,7 @@ below will be ignored.
 
 Session objects must define the following properties:
 
+* `username`: the TrackMyFish username to be associated with the session
 * `startDate`: the start of the session as the number of seconds since
     `1970-01-01 00:00:00`
 * `endDate`: the end of the session as the number of seconds since
