@@ -16,7 +16,7 @@
                 "tagColor": "blue",
                 "length": 13480,
                 "exactLength": false,
-                "catchCondition": "dead"
+                "catchHealth": "dead"
             }
         ]
     },
@@ -35,7 +35,8 @@
                 "tookSample": true,
                 "length": 7538,
                 "exactLength": true,
-                "condition": "vigorous"
+                "catchHealth": "vigorous",
+                "releaseHealth": "vigorous"
             }
         ]
     }
