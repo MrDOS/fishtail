@@ -37,8 +37,8 @@
                 "tookSample": true,
                 "length": 7538,
                 "exactLength": true,
-                "catchHealth": "vigorous",
-                "releaseHealth": "vigorous"
+                "catchHealth": "healthy",
+                "releaseHealth": "healthy"
             }
         ]
     }
