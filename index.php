@@ -33,9 +33,32 @@ catch (\PDOException $e)
 if (!isset($_REQUEST['secret']))
     finish('A secret must be provided.');
 
+if (!isset($_POST['sessions']))
+    finish('Session data must be provided.');
+
 $auth = new \ca\acadiau\cs\comp4583\fishtail\data\persistence\AuthRepository($db);
+$fishRepository = new \ca\acadiau\cs\comp4583\fishtail\data\persistence\FishRepository($db);
+$sessionRepository = new \ca\acadiau\cs\comp4583\fishtail\data\persistence\FishingSessionRepository($db, $fishRepository);
 
 if (!$auth->authenticate($_REQUEST['secret']))
     finish('The given secret is invalid.');
+
+try
+{
+    foreach (json_decode($_POST['sessions']) as $session)
+        $sessionRepository->store(new \ca\acadiau\cs\comp4583\fishtail\data\FishingSession($session));
+}
+catch (\ca\acadiau\cs\comp4583\fishtail\data\FishException $e)
+{
+    finish('An error occurred parsing the session data.');
+}
+catch (\PDOException $e)
+{
+    finish('An error occurred submitting the data to the database.');
+}
+catch (\Exception $e)
+{
+    finish('An unspecified error occurred.');
+}
 
 finish();
