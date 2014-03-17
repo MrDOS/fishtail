@@ -116,3 +116,12 @@ session: `session`, containing the JSON-encoded fishing session data, and
 `secret`, containing a secret key designated on a per-consumer basis by the
 operator of the API endpoint. The `session` data must be `POST`ed; `secret` can
 be provided via either `GET` or `POST`.
+
+Response
+--------
+
+Responses from the endpoint will be JSON-encoded messages with one or
+two properties:
+
+* `success`: a boolean indicating the success of the execution of the request
+* `error`: a human-readable error message present only when `success` is `false`
