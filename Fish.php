@@ -9,6 +9,11 @@
 class Fish
 {
     /**
+     * @var int the database ID of the session to which the fish belongs
+     */
+    public $session;
+
+    /**
      * @var string the species of fish
      */
     public $species;
@@ -52,15 +57,17 @@ class Fish
     public function __construct($object)
     {
         if (!isset($object->species))
-            throw new \Exception('A species must be specified');
+            throw new FishException('A species must be specified');
         if (!isset($object->length))
-            throw new \Exception('A length must be specified');
+            throw new FishException('A length must be specified');
         if (!isset($object->exactLength))
-            throw new \Exception('Whether the length is exact must be specified');
+            throw new FishException('Whether the length is exact must be specified');
         if (!isset($object->catchHealth))
-            throw new \Exception('The catch health must be specified');
+            throw new FishException('The catch health must be specified');
         if ($object->catchHealth !== 'dead' && !isset($object->releaseHealth))
-            throw new \Exception('The release health must be specified');
+            throw new FishException('The release health must be specified');
+
+        $this->session = null;
 
         $this->species = $object->species;
         $this->length = $object->length;

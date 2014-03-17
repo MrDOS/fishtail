@@ -61,27 +61,27 @@ class FishingSession
     public function __construct($object)
     {
         if (!isset($object->username))
-            throw new \Exception('A username must be specified');
+            throw new FishException('A username must be specified');
         if (!isset($object->startDate))
-            throw new \Exception('A start date must be specified');
+            throw new FishException('A start date must be specified');
         if (!isset($object->endDate))
-            throw new \Exception('An end date must be specified');
+            throw new FishException('An end date must be specified');
         if (!isset($object->anglers))
-            throw new \Exception('The number of anglers must be specified');
+            throw new FishException('The number of anglers must be specified');
         if (!isset($object->exactAnglers))
-            throw new \Exception('Whether the number of anglers is exact must be specified');
+            throw new FishException('Whether the number of anglers is exact must be specified');
         if (!isset($object->lines))
-            throw new \Exception('The number of lines must be specified');
+            throw new FishException('The number of lines must be specified');
         if (!isset($object->catches))
-            throw new \Exception('The number of catches must be specified');
+            throw new FishException('The number of catches must be specified');
         if (!isset($object->exactCatches))
-            throw new \Exception('Whether the number of catches is exact must be specified');
+            throw new FishException('Whether the number of catches is exact must be specified');
         if (!isset($object->fish) || !is_array($object->fish))
-            throw new \Exception('An array of fish must be given');
+            throw new FishException('An array of fish must be given');
 
         if ((!isset($object->latitude) || !isset($object->longitude))
             && !isset($object->locationName))
-            throw new \Exception('A location must be specified');
+            throw new FishException('A location must be specified');
 
         $this->username = $object->username;
         $this->latitude = (isset($object->latitude)) ? $object->latitude : null;

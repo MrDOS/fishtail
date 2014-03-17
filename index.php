@@ -4,6 +4,7 @@ require_once('AuthRepository.php');
 require_once('FishingSessionRepository.php');
 require_once('FishRepository.php');
 
+require_once('FishException.php');
 require_once('FishingSession.php');
 require_once('Fish.php');
 
