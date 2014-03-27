@@ -112,9 +112,9 @@ Submitting data
 ===============
 
 Two parameters must be sent to Fishtail in order to successfully store a fishing
-session: `session`, containing the JSON-encoded fishing session data, and
-`secret`, containing a secret key designated on a per-consumer basis by the
-operator of the API endpoint. The `session` data must be `POST`ed; `secret` can
+session: `sessions`, containing the array of JSON-encoded fishing session data,
+and `secret`, containing a secret key designated on a per-consumer basis by the
+operator of the API endpoint. The `sessions` data must be `POST`ed; `secret` can
 be provided via either `GET` or `POST`.
 
 Response
